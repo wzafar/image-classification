@@ -51,11 +51,8 @@ def loadImages(path, nTrain, nTest):
             img = misc.imresize(img, (width,height))
             y_test.append(int(image[0:3])-1)
             X_test.append(img)
-    return X_train, X_test, tf.keras.utils.to_categorical(y_train), tf.keras.utils.to_categorical(y_test)
-
-# tf.keras.utils.to_categorical converts a class vector (integers) to 
-# binary class matrix. For use with categorical_crossentropy
-    
+    return X_train, X_test, tf.keras.utils.to_categorical(y_train), tf.keras.utils.to_categorical(y_test) # tf.keras.utils.to_categorical converts a class vector (integers) to 
+# binary class matrix. For use with categorical_crossentropy.
 
 path = 'Dataset/256_ObjectCategories/'
 nTrain = 20
