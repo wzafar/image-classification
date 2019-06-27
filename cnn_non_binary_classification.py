@@ -1,6 +1,7 @@
 # Caltech 256 Image Classification
 # Link to dataset: https://www.kaggle.com/jessicali9530/caltech256
 
+
 # Step 1 - Importing the necessary libraries
 
 import numpy as np 
@@ -51,8 +52,9 @@ def loadImages(path, nTrain, nTest):
             img = misc.imresize(img, (width,height))
             y_test.append(int(image[0:3])-1)
             X_test.append(img)
-    return X_train, X_test, tf.keras.utils.to_categorical(y_train), tf.keras.utils.to_categorical(y_test) # tf.keras.utils.to_categorical converts a class vector (integers) to 
-# binary class matrix. For use with categorical_crossentropy.
+    return X_train, X_test, tf.keras.utils.to_categorical(y_train), tf.keras.utils.to_categorical(y_test) 
+# tf.keras.utils.to_categorical converts a class vector (integers) to binary class matrix. 
+# For use with categorical_crossentropy.
 
 path = 'Dataset/256_ObjectCategories/'
 nTrain = 20
@@ -96,9 +98,11 @@ classifier.add(Dense(units = 257, activation = 'sigmoid'))
 # Compiling the CNN
 classifier.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
+
 # Step 4 - Fitting the CNN to the Images
 
 classifier.fit(X_train, y_train, epochs = 25, validation_data = (X_test, y_test))
+
 
 # Step 5 - Evaluating the CNN 
 
