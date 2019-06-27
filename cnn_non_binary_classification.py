@@ -99,7 +99,7 @@ classifier.add(Dense(units = 257, activation = 'sigmoid'))
 # Compiling the CNN
 classifier.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
-# Step 4 - Fitting the CNN to the Images (Training Images and Test Images)
+# Step 4 - Fitting the CNN to the Images
 
 classifier.fit(X_train, y_train, epochs = 25, validation_data = (X_test, y_test))
 
