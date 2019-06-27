@@ -1,4 +1,5 @@
 # Caltech 256 Image Classification
+# Link to dataset: https://www.kaggle.com/jessicali9530/caltech256
 
 # Step 1 - Importing the necessary libraries
 
